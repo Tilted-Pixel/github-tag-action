@@ -31,7 +31,7 @@ echo -e "\tPRERELEASE_SUFFIX: ${suffix}"
 echo -e "\tVERBOSE: ${verbose}"
 
 # if with_v prefix specified then prefix tags with v
-if $with_v
+if [ ! -z "$with_v" ]
 then
 	prefix="v"
 fi
@@ -134,7 +134,7 @@ if [ ! -z "$new" ]
 then	
 
 	# prefix with custom prefix
-	if $prefix
+	if [ ! -z "$prefix" ]
 	then
 		new="$prefix$new"
 	fi	
