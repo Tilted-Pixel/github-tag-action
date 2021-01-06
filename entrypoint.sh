@@ -4,8 +4,8 @@ set -o pipefail
 
 # config
 default_semvar_bump=${DEFAULT_BUMP:-minor}
-with_v=${WITH_V:-false}
-prefix=${PREFIX:-false}
+with_v=${WITH_V:-""}
+prefix=${PREFIX:-""}
 release_branches=${RELEASE_BRANCHES:-master}
 custom_tag=${CUSTOM_TAG}
 source=${SOURCE:-.}
