@@ -133,7 +133,7 @@ echo $part
 if [ ! -z "$new" ]
 then	
 
-	$newbareversion="$new"
+	newbareversion="$new"
 	
 	# prefix with custom prefix
 	if [ ! -z "$prefix" ]
