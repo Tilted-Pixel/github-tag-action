@@ -93,15 +93,17 @@ then
   echo $log
 fi
 
+prefixlength = ${#prefix}
+bareversion = ${tag:prefixlength}
 case "$log" in
-    *#major* ) new=$(semver -i major $tag); part="major";;
-    *#minor* ) new=$(semver -i minor $tag); part="minor";;
-    *#patch* ) new=$(semver -i patch $tag); part="patch";;
+    *#major* ) new=$(semver -i major $bareversion); part="major";;
+    *#minor* ) new=$(semver -i minor $bareversion); part="minor";;
+    *#patch* ) new=$(semver -i patch $bareversion); part="patch";;
     * ) 
         if [ "$default_semvar_bump" == "none" ]; then
             echo "Default bump was set to none. Skipping..."; exit 0 
         else 
-            new=$(semver -i "${default_semvar_bump}" $tag); part=$default_semvar_bump 
+            new=$(semver -i "${default_semvar_bump}" $bareversion); part=$default_semvar_bump 
         fi 
         ;;
 esac
