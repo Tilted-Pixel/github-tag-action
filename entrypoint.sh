@@ -101,6 +101,8 @@ else
 	bareversion=${tag}
 fi
 
+echo "Bare Version: $bareversion \n"
+
 case "$log" in
     *#major* ) new=$(semver -i major $bareversion); part="major";;
     *#minor* ) new=$(semver -i minor $bareversion); part="minor";;
