@@ -4,7 +4,7 @@ set -o pipefail
 
 # config
 default_semvar_bump=${DEFAULT_BUMP:-minor}
-with_v=${WITH_V:-""}
+with_v=${WITH_V:-false}
 prefix=${PREFIX:-""}
 release_branches=${RELEASE_BRANCHES:-master}
 custom_tag=${CUSTOM_TAG}
@@ -31,7 +31,7 @@ echo -e "\tPRERELEASE_SUFFIX: ${suffix}"
 echo -e "\tVERBOSE: ${verbose}"
 
 # if with_v prefix specified then prefix tags with v
-if [ ! -z "$with_v" ]
+if $with_v
 then
 	prefix="v"
 fi
