@@ -95,8 +95,9 @@ fi
 
 if $prefix
 then
+	echo "using prefix\n"
 	prefixlength=${#prefix}
-	bareversion=${tag:prefixlength}
+	bareversion=${tag:$prefixlength}
 else
 	bareversion=${tag}
 fi
