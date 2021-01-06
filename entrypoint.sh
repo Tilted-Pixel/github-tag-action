@@ -153,6 +153,7 @@ else
 fi
 
 # set outputs
+echo ::set-output name=new_version::$bareversion
 echo ::set-output name=new_tag::$new
 echo ::set-output name=part::$part
 
