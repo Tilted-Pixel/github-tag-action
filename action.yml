@@ -7,7 +7,7 @@ runs:
 outputs:
   new_tag:
     description: 'Generated tag'
-new_version:
+  new_version:
     description: 'Generated version without any prefix'    
   tag:
     description: 'The latest tag after running this action'
