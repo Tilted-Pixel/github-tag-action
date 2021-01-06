@@ -93,7 +93,7 @@ then
   echo $log
 fi
 
-if $prefix
+if [ ! -z "$prefix" ]
 then
 	echo "using prefix\n"
 	prefixlength=${#prefix}
