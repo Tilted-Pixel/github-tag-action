@@ -93,8 +93,14 @@ then
   echo $log
 fi
 
-prefixlength = ${#prefix}
-bareversion = ${tag:prefixlength}
+if $prefix
+then
+	prefixlength=${#prefix}
+	bareversion=${tag:prefixlength}
+else
+	bareversion=${tag}
+fi
+
 case "$log" in
     *#major* ) new=$(semver -i major $bareversion); part="major";;
     *#minor* ) new=$(semver -i minor $bareversion); part="minor";;
