@@ -15,6 +15,9 @@ tag_context=${TAG_CONTEXT:-repo}
 suffix=${PRERELEASE_SUFFIX:-beta}
 verbose=${VERBOSE:-true}
 
+git config --global --add safe.directory ${GITHUB_WORKSPACE}
+
+
 cd ${GITHUB_WORKSPACE}/${source}
 
 echo "*** CONFIGURATION ***"
